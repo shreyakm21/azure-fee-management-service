@@ -1,0 +1,69 @@
+FeeManagementSystem/
+│
+├── AzureFunctions/
+│     ├── GetStudentFee
+│     ├── UpdateFee
+│     ├── host.json
+│     ├── local.settings.json
+│     └── requirements.txt
+│
+├── Database/
+│     ├── create_tables.sql
+│     └── insert_data.sql
+│
+├── Docs/
+│
+└── README.md
+
+
+-- ============================
+-- Students Table
+-- ============================
+
+CREATE TABLE Students (
+    StudentID INT PRIMARY KEY IDENTITY(1,1),
+    Name NVARCHAR(100) NOT NULL,
+    Course NVARCHAR(100) NOT NULL,
+    Email NVARCHAR(100) NOT NULL,
+    TotalFee DECIMAL(10,2) NOT NULL,
+    PaidAmount DECIMAL(10,2) NOT NULL,
+    DueDate DATE NOT NULL
+);
+
+-- ============================
+-- Administrators Table
+-- ============================
+
+CREATE TABLE Administrators (
+    AdminID INT PRIMARY KEY IDENTITY(1,1),
+    Name NVARCHAR(100) NOT NULL,
+    Email NVARCHAR(100) NOT NULL,
+    Role NVARCHAR(50) NOT NULL
+);
+
+
+FeeManagementService
+
+│
+
+├── AzureFunctions
+
+├── Documentation
+│      README.md
+│      DeploymentGuide.md
+│      Architecture.png
+│
+├── SQL
+│      create_database.sql
+│
+├── screenshots
+│      01-resource-group.png
+│      02-sql-database.png
+│      03-function-app.png
+│      04-api-management.png
+│      05-getstudentfee-api.png
+│      06-updatefee-api.png
+│      07-application-insights.png
+│      08-logic-app.png
+│
+└── requirements.txt
